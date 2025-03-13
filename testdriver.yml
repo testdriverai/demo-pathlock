@@ -1,13 +1,9 @@
 version: 4.2.12
 session: 67d2decc1f46b71fa13f284c
 steps:
-  - prompt: focus chrome
-    commands:
-      - command: focus-application
-        name: Google Chrome
   - prompt: >-
-      click on username and enter QAAutoAdmin click on password and enter
-      Admin@123$
+      click on username and enter ${TD_TEST_USERNAME} click on password and enter
+      ${TD_TEST_PASSWORD}
     commands:
       - command: focus-application
         name: Google Chrome
@@ -16,17 +12,15 @@ steps:
         description: username input field
         action: click
       - command: type
-        text: QAAutoAdmin
+        text: ${TD_TEST_USERNAME}
       - command: hover-text
         text: Password
         description: password input field
         action: click
       - command: type
-        text: Admin@123$
+        text: ${TD_TEST_PASSWORD}
   - prompt: click on Sign in
     commands:
-      - command: focus-application
-        name: Google Chrome
       - command: hover-text
         text: Sign in
         description: sign in button
@@ -35,8 +29,6 @@ steps:
       click on search icon on the left side, then click on Admin, then click on
       Workflow and then click on Workflow types and wait for 3 sec
     commands:
-      - command: focus-application
-        name: Google Chrome
       - command: hover-image
         description: search icon on the left side
         action: click
@@ -97,8 +89,6 @@ steps:
       Approve by Group and select Approve by Group click on the Not Set next to
       Approve Group Type, type IT team and press enter, then click on User Input
     commands:
-      - command: focus-application
-        name: Google Chrome
       - command: hover-text
         text: New Step
         description: button to add a new step
