@@ -1,0 +1,89 @@
+version: 4.2.12
+session: 67d2decc1f46b71fa13f284c
+steps:
+  - prompt: focus chrome
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: >-
+      click on username and enter QAAutoAdmin click on password and enter
+      Admin@123$
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Username
+        description: username input field
+        action: click
+      - command: type
+        text: QAAutoAdmin
+      - command: hover-text
+        text: Password
+        description: password input field
+        action: click
+      - command: type
+        text: Admin@123$
+  - prompt: click on Sign in
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Sign in
+        description: sign in button
+        action: click
+  - prompt: >-
+      click on search icon on the left side, then click on Admin, then click on
+      Workflow and then click on Workflow types and wait for 3 sec
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-image
+        description: search icon on the left side
+        action: click
+      - command: hover-text
+        text: Admin
+        description: admin menu item
+        action: click
+      - command: hover-text
+        text: Workflow
+        description: workflow menu item
+        action: click
+      - command: hover-text
+        text: Workflow Types
+        description: workflow types menu item
+        action: click
+      - command: wait
+        timeout: 3000
+      - command: hover-image
+        description: input field next to the text Workflow
+        action: 
+  - prompt: >- 
+  commands:
+      - command: hover-text
+        text: Not set
+        description: first occurrence of Not set
+        action: click
+      - command: press-keys
+        keys: [enter]
+      - command: press-keys
+        keys: [tab]
+      - command: type
+        text: AA_AI_Test
+      - command: press-keys
+        keys: [tab]
+      - command: type
+        text: AA AI Test Request
+      - command: scroll-until-text
+        text: Insert
+        direction: down
+        method: keyboard
+      - command: hover-text
+        text: Insert
+        description: insert button
+        action: click
+      - command: hover-text
+        text: Yes
+        description: confirmation pop-up
+        action: click
+
+
