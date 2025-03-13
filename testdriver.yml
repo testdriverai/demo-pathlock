@@ -58,7 +58,8 @@ steps:
         description: input field next to the text Workflow
         action: 
   - prompt: >- 
-  commands:
+      click on the input field next to the text Workflow and enter AA_AI_Test similarly for the second input field enter AA AI Test Request
+    commands:
       - command: hover-text
         text: Not set
         description: first occurrence of Not set
@@ -73,8 +74,7 @@ steps:
         keys: [tab]
       - command: type
         text: AA AI Test Request
-      - command: scroll-until-text
-        text: Insert
+      - command: scroll
         direction: down
         method: keyboard
       - command: hover-text
