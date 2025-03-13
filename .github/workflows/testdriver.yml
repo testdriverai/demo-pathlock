@@ -25,4 +25,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"
-          WEBSITE_URL: "https://example.com" # Define the website URL here
+          WEBSITE_URL: "https://flex-qa-auto-dev.stage.appsiangrc.com/App/LoginPage.aspx" # Define the website URL here
