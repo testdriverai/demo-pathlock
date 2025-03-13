@@ -56,22 +56,26 @@ steps:
         timeout: 3000
       - command: hover-image
         description: input field next to the text Workflow
-        action: 
-  - prompt: >- 
-      click on the input field next to the text Workflow and enter AA_AI_Test similarly for the second input field enter AA AI Test Request
+        action: null
+  - prompt: >-
+      click on the input field next to the text Workflow and enter AA_AI_Test
+      similarly for the second input field enter AA AI Test Request
     commands:
       - command: hover-text
         text: Not set
         description: first occurrence of Not set
         action: click
       - command: press-keys
-        keys: [enter]
+        keys:
+          - enter
       - command: press-keys
-        keys: [tab]
+        keys:
+          - tab
       - command: type
         text: AA_AI_Test
       - command: press-keys
-        keys: [tab]
+        keys:
+          - tab
       - command: type
         text: AA AI Test Request
       - command: scroll
@@ -82,8 +86,63 @@ steps:
         description: insert button
         action: click
       - command: hover-text
-        text: Yes
+        text: 'Yes'
         description: confirmation pop-up
         action: click
-
-
+      - command: wait
+        timeout: 3000
+  - prompt: >-
+      click on New Step and then press tab, then enter AA_AI_Test Step 1, then
+      click on the Not Set nex to Parent Step and select Start then click on
+      Approve by Group and select Approve by Group click on the Not Set next to
+      Approve Group Type, type IT team and press enter, then click on User Input
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: New Step
+        description: button to add a new step
+        action: click
+      - command: press-keys
+        keys:
+          - tab
+      - command: type
+        text: AA_AI_Test Step 1
+      - command: hover-text
+        text: Not Set
+        description: next to Parent Step
+        action: click
+      - command: hover-text
+        text: Start
+        description: option to select Start
+        action: click
+      - command: hover-text
+        text: Approve by Group
+        description: button to approve by group
+        action: click
+      - command: hover-text
+        text: Approve by Group
+        description: option to select Approve by Group
+        action: click
+      - command: hover-text
+        text: Not Set
+        description: next to Approve Group Type
+        action: click
+      - command: type
+        text: IT team
+      - command: press-keys
+        keys:
+          - enter
+      - command: hover-text
+        text: User Input
+        description: button for user input
+        action: click
+      - command: hover-image
+        description: checkbox next to "Enable Role Selection"
+        action: click
+      - command: hover-text
+        text: Insert
+        description: insert button
+        action: click
+      - command: wait
+        timeout: 5000
