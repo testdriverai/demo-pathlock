@@ -21,6 +21,24 @@ jobs:
             npm init -y
             npm install dashcam-chrome
             Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized", "--load-extension=$(pwd)/node_modules/dashcam-chrome/build", "${{ env.WEBSITE_URL }}"
+
+            # Hide the taskbar
+            Add-Type @"
+                using System;
+                using System.Runtime.InteropServices;
+                public class WinAPI {
+                    [DllImport("user32.dll")]
+                    public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+                    [DllImport("user32.dll")]
+                    public static extern int ShowWindow(IntPtr hWnd, int nCmdShow);
+                }
+            "@
+            $taskbarHandle = [WinAPI]::FindWindow("Shell_TrayWnd", $null)
+            [WinAPI]::ShowWindow($taskbarHandle, 0)  # 0 = SW_HIDE
+
+            # Restore the taskbar
+            # [WinAPI]::ShowWindow($taskbarHandle, 1)  # 1 = SW_SHOWNORMAL
+            
             exit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
