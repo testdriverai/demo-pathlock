@@ -49,98 +49,376 @@ steps:
       - command: hover-image
         description: input field next to the text Workflow
         action: null
-  - prompt: >-
-      click on the input field next to the text Workflow and enter AA_AI_Test
-      similarly for the second input field enter AA AI Test Request
+  - prompt: in the save password prompt click Save
     commands:
       - command: hover-text
-        text: Not set
-        description: first occurrence of Not set
+        text: Save
+        description: Save button in the save password prompt
         action: click
-      - command: press-keys
-        keys:
-          - enter
+  - prompt: click new record
+    commands:
+      - command: hover-text
+        text: New Record
+        description: new record tab in the workflow types page
+        action: click
       - command: press-keys
         keys:
           - tab
       - command: type
         text: AA_AI_Test
-      - command: hover-text
-        text: Save
-        description: Save button
-        action: click
       - command: press-keys
         keys:
           - tab
       - command: type
         text: AA AI Test Request
-      - command: hover-text
-        text: Save
-        description: Save button
-        action: click
-      - command: scroll
+  - prompt: scroll down and click the insert button
+    commands:
+      - command: scroll-until-text
+        text: Insert
         direction: down
         method: keyboard
       - command: hover-text
         text: Insert
-        description: insert button
+        description: insert button at the bottom of the form
         action: click
+  - prompt: click Yes on the popup
+    commands:
       - command: hover-text
         text: 'Yes'
-        description: confirmation pop-up
+        description: yes button on the popup
         action: click
-      - command: wait
-        timeout: 3000
-  - prompt: >-
-      click on New Step and then press tab, then enter AA_AI_Test Step 1, then
-      click on the Not Set nex to Parent Step and select Start then click on
-      Approve by Group and select Approve by Group click on the Not Set next to
-      Approve Group Type, type IT team and press enter, then click on User Input
+  - prompt: click new step
     commands:
       - command: hover-text
         text: New Step
-        description: button to add a new step
+        description: new step button in the header
+        action: click
+  - prompt: press tab and enter AA_AI_Test Step 1
+    commands:
+      - command: hover-text
+        text: Step Name
+        description: label for the step name input field
         action: click
       - command: press-keys
         keys:
           - tab
       - command: type
         text: AA_AI_Test Step 1
+  - prompt: click the parent step dropdown that says [Not set] and select 'start'
+    commands:
       - command: hover-text
-        text: Not Set
-        description: next to Parent Step
+        text:
+          - Not Set
+        description: dropdown for parent step selection
         action: click
       - command: hover-text
-        text: Start
-        description: option to select Start
+        text: start
+        description: option in the parent step dropdown
         action: click
+  - prompt: >-
+      click the Approval Group Type dropdown that says [Not set] and type 'IT'
+      and select 'IT Team'
+    commands:
       - command: hover-text
-        text: Approve by Group
-        description: button to approve by group
-        action: click
-      - command: hover-text
-        text: Approve by Group
-        description: option to select Approve by Group
-        action: click
-      - command: hover-text
-        text: Not Set
-        description: next to Approve Group Type
+        text:
+          - Not Set
+        description: dropdown for approval group type selection
         action: click
       - command: type
-        text: IT team
-      - command: press-keys
-        keys:
-          - enter
+        text: IT
+      - command: hover-text
+        text: IT Team
+        description: option in the approval group type dropdown
+        action: click
+  - prompt: click User Input
+    commands:
       - command: hover-text
         text: User Input
-        description: button for user input
+        description: section header for user input
         action: click
-      - command: hover-image
-        description: checkbox next to "Enable Role Selection"
+  - prompt: >-
+      Check "Enable Role Selection" checkbox and then scroll until the Insert
+      button is visible and click it
+    commands:
+      - command: hover-text
+        text: Enable Role Selection
+        description: checkbox for enabling role selection
         action: click
+      - command: scroll-until-text
+        text: Insert
+        direction: down
+        method: keyboard
       - command: hover-text
         text: Insert
-        description: insert button
+        description: button to insert the form
         action: click
+  - prompt: press tab and enter AA_AI_Test Step 2
+    commands:
+      - command: hover-text
+        text: Step Name
+        description: label for the step name input field
+        action: click
+      - command: press-keys
+        keys:
+          - tab
+      - command: type
+        text: AA_AI_Test Step 2
+  - prompt: >-
+      click the parent step dropdown that says [Not set] and select 'AA_AI_Test
+      Step 1'
+    commands:
+      - command: hover-text
+        text:
+          - Not Set
+        description: dropdown for parent step selection
+        action: click
+      - command: hover-text
+        text: AA_AI_Test Step
+        description: option in the parent step dropdown
+        action: click
+  - prompt: >-
+      click the Step Type dropdown that says [Not set] and type 'Run' and select
+      'Run actions automatically'
+    commands:
+      - command: hover-text
+        text:
+          - Not Set
+        description: dropdown for approval group type selection
+        action: click
+      - command: type
+        text: Run
+      - command: hover-text
+        text: Run actions automatically
+        description: option in the step type type dropdown
+        action: click
+  - prompt: >-
+      click the Action to perform dropdown that says [Not set] and select 'Apply
+      workflow Authorizations'
+    commands:
+      - command: hover-text
+        text:
+          - Not Set
+        description: dropdown for Action to Perform selection
+        action: click
+      - command: hover-text
+        text: Apply workflow Authorizations
+        description: option in the Action to Perform dropdown
+        action: click
+  - prompt: scroll until the Insert button is visible and click it
+    commands:
+      - command: scroll-until-text
+        text: Insert
+        direction: down
+        method: keyboard
+      - command: hover-text
+        text: Insert
+        description: button to insert the form
+        action: click
+  - prompt: click the Update button
+    commands:
+      - command: hover-text
+        text: Update
+        description: button to update the form
+        action: click
+  - prompt: close this modal
+    commands:
+      - command: hover-image
+        description: close button in the top right corner of the modal
+        action: click
+  - prompt: scroll up until Flow is visible and click it
+    commands:
+      - command: scroll-until-text
+        text: Flow
+        direction: up
+        method: keyboard
+      - command: hover-text
+        text: Flow
+        description: tab to view the flow settings
+        action: click
+  - prompt: click the actions button
+    commands:
+      - command: hover-text
+        text: Actions
+        description: actions button in the top right of the workflow page
+        action: click
+  - prompt: select open request page
+    commands:
+      - command: hover-text
+        text: Open Request Page
+        description: option in the actions dropdown menu
+        action: click
+  - prompt: >-
+      click the Request for System dropdown that says CCM and type 'SAP' and
+      select 'SAP ERP'
+    commands:
+      - command: hover-text
+        text:
+          - CCM
+        description: dropdown for Request for System
+        action: click
+      - command: type
+        text: SAP
+      - command: hover-text
+        text: SAP ERP
+        description: option in the Request for System dropdown
+        action: click
+  - prompt: press tab and enter USER25062727
+    commands:
+      - command: hover-text
+        text: Username
+        description: label for the Username input field
+        action: click
+      - command: press-keys
+        keys:
+          - tab
+      - command: type
+        text: USER25062727
+  - prompt: click next
+    commands:
+      - command: hover-text
+        text: Next >
+        description: next button below the username input
+        action: click
+  - prompt: type testing.. then click submit
+    commands:
+      - command: type
+        text: testing..
+      - command: hover-text
+        text: Submit
+        description: submit button below the comment box
+        action: click
+  - prompt: click submit
+    commands:
+      - command: hover-text
+        text: Submit
+        description: submit button below the comment box
+        action: click
+  - prompt: click submit
+    commands:
+      - command: hover-text
+        text: Submit
+        description: submit button below the comment box
+        action: click
+  - prompt: wait 10 seconds
+    commands:
       - command: wait
-        timeout: 5000
+        timeout: 10000
+  - prompt: remember the request ID now visible
+    commands:
+      - command: remember
+        description: Request ID
+        value: 16107703
+  - prompt: click All my requests
+    commands:
+      - command: hover-text
+        text: All My Requests
+        description: all my requests link in the continue section
+        action: click
+  - prompt: >-
+      find the request with the request ID we remembered earlier, and then click
+      it
+    commands:
+      - command: hover-text
+        text: 16107703
+        description: request ID link in the request list
+        action: click
+  - prompt: wait 10 seconds
+    commands:
+      - command: wait
+        timeout: 10000
+  - prompt: click Approve/Decline request button
+    commands:
+      - command: hover-text
+        text: Approve/Decline Request
+        description: approve or decline request button in the top right corner
+        action: click
+  - prompt: click Ok
+    commands:
+      - command: hover-text
+        text: Ok
+        description: Ok Button
+        action: click
+  - prompt: click the home button in the sidebar
+    commands:
+      - command: hover-image
+        description: home button in the sidebar
+        action: click
+  - prompt: >-
+      Click the reports button in the sidebar (looks like a document) then click
+      workflows, then click approved requests
+    commands:
+      - command: hover-image
+        description: reports button in the sidebar that looks like a document
+        action: click
+      - command: hover-text
+        text: Workflows
+        description: Workflows option in the sidebar menu
+        action: click
+      - command: hover-text
+        text: Approved requests
+        description: Approved requests option in the sidebar menu
+        action: click
+  - prompt: click Filter
+    commands:
+      - command: hover-text
+        text: Filter
+        description: Filter button in the interface
+        action: click
+  - prompt: Click users filter
+    commands:
+      - command: hover-text
+        text: Users Filter
+        description: Users Filter button next to the Display button
+        action: click
+  - prompt: >-
+      search the page for USER25062727, scrolling and navigating to the next
+      page if necessary, then click the users profile
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll-until-text
+        text: USER25062727
+        direction: down
+        method: keyboard
+      - command: hover-text
+        text: USER25062727
+        description: user's profile link
+        action: click
+  - prompt: click user profile
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: User profile
+        description: user profile option in the context menu
+        action: click
+  - prompt: click workflows
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Workflows
+        description: workflows tab in the user profile section
+        action: click
+  - prompt: Assert AA_AI_Test has Current Step = Finish
+    commands:
+      - command: assert
+        expect: AA_AI_Test has Current Step = Finish
+      - command: hover-image
+        description: close button in the top right corner of the modal window
+        action: click
+  - prompt: click home from the sidebar
+    commands:
+      - command: hover-image
+        description: home icon in the sidebar
+        action: click
+  - prompt: click QA_Admin, then click sign out
+    commands:
+      - command: hover-text
+        text: QA_Admin
+        description: user profile menu in the top right corner
+        action: click
+      - command: hover-text
+        text: Sign Out
+        description: sign out option in the dropdown menu
+        action: click
