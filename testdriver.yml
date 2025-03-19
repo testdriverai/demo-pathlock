@@ -65,11 +65,19 @@ steps:
           - tab
       - command: type
         text: AA_AI_Test
+      - command: hover-text
+        text: Save
+        description: Save button
+        action: click
       - command: press-keys
         keys:
           - tab
       - command: type
         text: AA AI Test Request
+      - command: hover-text
+        text: Save
+        description: Save button
+        action: click
       - command: scroll
         direction: down
         method: keyboard
