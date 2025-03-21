@@ -66,6 +66,9 @@ steps:
       - command: press-keys
         keys:
           - tab
+      - command: press-keys
+        keys:
+          - tab
       - command: type
         text: AA_AI_Test
       - command: press-keys
