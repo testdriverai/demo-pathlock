@@ -25,14 +25,14 @@ steps:
         text: Sign in
         description: sign in button
         action: click
+      - command: wait
+        timeout: 25000
   - prompt: in the save password prompt click Save
     commands:
       - command: hover-text
         text: Save
         description: Save button in the save password prompt
         action: click
-      - command: wait
-        timeout: 25000
   - prompt: >-
       click on search icon on the left side, then click on Admin, then click on
       Workflow and then click on Workflow types and wait for 3 sec
